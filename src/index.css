@@ -1,0 +1,960 @@
+/* index.css */
+@font-face {
+  font-family: 'Fairplay Display';
+  src: url('./assets/fonts/FairplayDisplay.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fairplay Display';
+  src: url('./assets/fonts/FairplayDisplayItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.active {
+  color: #2F4858;
+}
+
+
+body {
+  font-family: 'Fairplay Display', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  min-height: 100vh;
+}
+
+
+/* New: container inside header for spacing */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Space nav items evenly */
+.nav-links {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+  gap: 1.5rem; /* extra spacing */
+}
+
+/* Optional: keeps header sticky if needed */
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4D9078;
+  color: white;
+  padding: 1rem 0; /* vertical padding only now */
+  z-index: 100;
+}
+
+/* Style Login NavLink */
+.login-link {
+  font-family: 'Fairplay Display', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 0.4rem 0.75rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-link:hover {
+  background-color: white;
+  color: #4D9078;
+}
+
+
+/* Navigation links */
+nav a {
+  font-family: 'Fairplay Display', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+nav a:hover {
+  border-bottom: 2px solid white;
+}
+
+nav a.active {
+  border-bottom: 2px solid white;
+}
+
+
+/* Page layout */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.center {
+  width: 15%;
+  height: 40%;
+  object-fit:contain;
+  position: absolute;
+  left: 15%;
+  top: 25%;
+  z-index: 2;
+  border-radius: 10px;
+  background-color: white;
+  border: 2.5px solid #4D9078
+}
+
+.side {
+  width: 12.5%;
+  height: 30%;
+  object-fit:contain;
+  position: absolute;
+  left: 7.5%;
+  top: 30%;
+  z-index: 1;
+  border-radius: 10px;
+  border: 2.5px solid #4D9078
+}
+
+.info-container {
+  width: 30%;
+  height: 15%;
+  position: absolute;
+  left: 7.5%;
+  top: 67.5%;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  padding-bottom: .75%;
+  padding-right: .5%;
+  padding-left: .5%;
+  padding-top: .75;
+  border: 2.5px solid #4D9078
+}
+
+.title {
+  font-family: 'Fairplay Display';
+  text-align: center;
+}
+
+.description {
+  font-family: 'Fairplay Display';
+  font-style: italic;
+  text-align: center;
+}
+
+.arrow {
+  position: absolute;
+  top: 40%;
+  z-index: 2;
+  font-size: 1.5rem;
+  padding: .75% 1.25%;
+  background-color: rgba(77, 144, 120, .9);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.pref-container {
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  width: 80%;
+  height: 75%;
+  border: 5px solid #4D9078;
+  background-color: rgba(77, 144, 120, .1);
+}
+
+.specific-prefs {
+  position: absolute;
+  top: 12.5%;
+  width: 100%;
+  height: 87.5%;
+  background-color: white
+}
+
+.chooseprefs {
+  position: absolute;
+  left: 15%;
+  top: 23.75%;
+  width: 70%;
+  height: 5%;
+  z-index: 3;
+}
+
+.prefsbutton {
+  background: none;
+  border: none;
+  margin-right: 5%;
+  margin-left: 1%;
+  border-bottom: 2px solid transparent;  /* Default: no underline */
+  color: #4D9078;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-family: 'Fairplay Display', sans-serif;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.prefsbutton.active {
+  border-bottom: 2px solid #4D9078;  /* Show underline if active */
+  font-weight: bold;
+}
+
+
+.mutual-container {
+  position: absolute;
+  left: 12.5%;
+  top: 32.5%;
+  width: 75%;
+  height: 25%;
+  border: 5px solid rgba(77, 144, 120, .3);
+  background-color: rgba(77, 144, 120, .1);
+  z-index: 2;
+}
+
+.pref {
+  position: absolute;
+  top: 5%;
+  left: 2.5%;
+  width: 95%;
+  height: 27.5%;
+  border: 5px solid rgba(77, 144, 120, .3);
+  background-color: rgba(77, 144, 120, .1);
+  z-index: 2;
+}
+
+.pref-title {
+  font-family: "Fairplay Display";
+  color: #4D9078;
+  position: absolute;
+  font-size: 1.5rem;
+  left: 5%;
+  top: 10%;
+  text-align: center;
+}
+
+.price-input {
+  width: 8%;
+  height: 75%;
+  position: absolute;
+  top: 15%;
+  left: 2.25%;
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  border: 2px solid #4D9078;
+  border-radius: 8px;
+  font-family: 'Fairplay Display', sans-serif;
+  color: #333;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 10%;
+  text-align: center;
+}
+
+.price-input:focus {
+  border-color: #2e6e5d;
+  box-shadow: 0 0 0 2px rgba(77, 144, 120, 0.25);
+}
+
+.price-separator {
+  position: absolute;
+  left: 21.25%;
+  top: 0%;
+  font-size: 2rem;
+  color: #4D9078;
+}
+
+.rating-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12.5%;
+  height: 8px;
+  background: #4D9078;
+  outline: none;
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transition: background 0.3s ease;
+}
+
+.rating-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  background: #E8DCB9;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.rating-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  background: black;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.rating-value {
+  position: absolute;
+  left: 63%;
+  top: 17.5%;
+  font-size: 1.2rem;
+  color: #4D9078;
+  font-family: 'Fairplay Display', sans-serif;
+}
+
+.brand-input {
+  width: 20%;
+  height: 75%;
+  position: absolute;
+  top: 15%;
+  left: 68.75%;
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  border: 2px solid #4D9078;
+  border-radius: 8px;
+  font-family: 'Fairplay Display', sans-serif;
+  color: #333;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 10%;
+  text-align: start;
+}
+
+.pref-button {
+  position: absolute;
+  left: 37.5%;
+  top: 10%;
+  z-index: 2;
+  font-size: 1rem;
+  padding: 0.5% 0.83%;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: white;
+  font-family: 'Fairplay Display', sans-serif;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* OFF state */
+.pref-button.off {
+  background-color: rgba(180, 180, 180, 0.6);
+  color: #333;
+}
+
+/* ON state */
+.pref-button.on {
+  background-color: rgba(77, 144, 120, 0.9);
+  color: white;
+}
+/* Multi-select dropdown */
+.multi-select-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-top: 5.75%;
+}
+.multi-select {
+  width: 30%;
+}
+
+.multi-select-group2 {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+  margin-top: 0.75%;
+}
+.multi-select2 {
+  width: 50%;
+}
+
+.multi-select .react-select__control {
+  border: 2px solid #4D9078;
+  background-color: #fff;
+  border-radius: 8px;
+  min-height: 38px;
+  box-shadow: none;
+  transition: border-color 0.3s ease;
+  overflow: hidden; /* hide internal overflow */
+}
+
+.multi-select .react-select__control:hover {
+  border-color: #2e6e5d;
+}
+
+.multi-select .react-select__value-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  gap: 0.25rem;
+  padding: 0.4rem;
+  scrollbar-width: thin;
+}
+
+.multi-select .react-select__multi-value {
+  background-color: rgba(77, 144, 120, 0.2);
+  border-radius: 6px;
+  flex-shrink: 0; /* don't shrink to fit */
+}
+
+.multi-select .react-select__multi-value__label {
+  color: #4D9078;
+  font-weight: bold;
+}
+
+.multi-select .react-select__multi-value__remove {
+  color: #2e6e5d;
+  cursor: pointer;
+}
+
+.multi-select .react-select__menu {
+  border: 1px solid #4D9078;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(77, 144, 120, 0.1);
+  z-index: 10;
+}
+
+.search-input {
+  width: 27.5%;
+  height: 5.625%;
+  position: absolute;
+  top: 12.5%;
+  right: 67.5%;
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  border: 2px solid #4D9078;
+  border-radius: 8px;
+  font-family: 'Fairplay Display', sans-serif;
+  color: #333;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 10%;
+  text-align: start;
+}
+
+.product {
+  position: absolute;
+  left: 2.5%;
+  top: 12.5%;
+  width: 95%;
+  height: 125%;
+  border: 10px solid rgba(77, 144, 120, .3);
+  border-radius: 25px;
+  background-color: rgba(77, 144, 120, .1);
+  z-index: 2;
+}
+
+.prod {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 2.5%;
+  top: 1.5%;
+  width: 30%;
+  height: 90%;
+  padding-top: 0.5%;
+  border: 10px solid rgba(77, 144, 120, 0.3);
+  border-radius: 25px;
+  background-color: rgba(77, 144, 120, 0.1);
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.prod-img {
+  margin-top: 2.5%;
+  margin-bottom: 1%;
+  width: 85%;
+  height: 40%;
+  object-fit: cover;
+  border: 5px solid rgba(77, 144, 120, 0.3);
+  border-radius: 15px;
+  background-color: rgba(255,255,255, 0.5);
+}
+
+.image-thumbnails {
+  display: flex;
+  gap: 5px;
+  width: 85%;
+  justify-content: center;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
+.thumbnail {
+  width: 20%;
+  height: 40px;
+  object-fit: contain;
+  border: 3px solid rgba(77, 144, 120, 0.3);
+  border-radius: 8px;
+  background-color: rgba(255,255,255, 0.5);
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail:hover {
+  border-color: rgba(77, 144, 120, 0.6);
+}
+
+.thumbnail.selected {
+  border-color: rgba(77, 144, 120, 0.8);
+  border-width: 4px;
+}
+
+/* Scores Section */
+.scores-section {
+  width: 85%;
+  margin-bottom: 2%;
+}
+
+.score-item {
+  text-align: center;
+  margin-bottom: .5rem;
+  padding: 0.4rem;
+  border: 2px solid rgba(77, 144, 120, 0.3);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.score-item h4 {
+  font-family: 'Fairplay Display';
+  font-size: 0.9em;
+  margin: 0 0 0.5rem 0;
+  color: rgba(77, 144, 120, 0.8);
+}
+
+.score-value {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: rgba(77, 144, 120, 0.9);
+  margin-bottom: 0.3rem;
+}
+
+.score-note {
+  font-size: 0.7em;
+  color: #666;
+  font-style: italic;
+}
+
+/* Product Properties Section */
+.product-props {
+  width: 85%;
+  margin-bottom: 2%;
+}
+
+.product-props h4 {
+  font-family: 'Fairplay Display';
+  font-size: 0.95em;
+  margin: 0 0 0.8rem 0;
+  color: rgba(77, 144, 120, 0.8);
+  text-align: center;
+}
+
+.props-list {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid rgba(77, 144, 120, 0.2);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.5rem;
+}
+
+.prop-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid rgba(77, 144, 120, 0.1);
+  font-size: 0.8em;
+}
+
+.prop-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.prop-label {
+  font-weight: bold;
+  color: rgba(77, 144, 120, 0.7);
+  min-width: 40%;
+  text-align: left;
+}
+
+.prop-value {
+  text-align: right;
+  max-width: 55%;
+  word-wrap: break-word;
+  color: #333;
+}
+
+.prod-details {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: absolute;
+  left: 33%;
+  top: 1.5%;
+  width: 45%;
+  height: 90%;
+  padding: 1%;
+  border: 10px solid rgba(77, 144, 120, 0.3);
+  border-radius: 25px;
+  background-color: rgba(77, 144, 120, 0.1);
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.product-name {
+  font-family: 'Fairplay Display';
+  font-size: 1.5em;
+  margin: 0 0 0.5rem 0;
+  text-align: start;
+  line-height: 1.2;
+}
+
+.product-link {
+  text-decoration: none;   /* no underline by default */
+  color: inherit;          /* inherit text color */
+  transition: color 0.3s ease;
+}
+
+.product-link:hover {
+  color: rgba(77, 144, 120, 1);  /* your hover color */
+  text-decoration: none;          /* keep no underline on hover */
+  cursor: pointer;                /* indicate clickable */
+}
+
+.brand-name {
+  font-family: 'Fairplay Display';
+  font-size: 1.1em;
+  margin: 0 0 1rem 0;
+  color: rgba(77, 144, 120, 0.8);
+  font-weight: normal;
+}
+
+.rating-section {
+  margin-bottom: 1rem;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.7em;
+}
+
+.rating-text {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.review-count {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.price {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: rgba(77, 144, 120, 0.9);
+  margin-bottom: 1.5rem;
+}
+
+.description-section,
+.ingredients-section,
+.how-to-use-section,
+.reviews-section {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.description-section h4,
+.ingredients-section h4,
+.how-to-use-section h4,
+.reviews-section h4 {
+  font-family: 'Fairplay Display';
+  font-size: 1.1em;
+  margin-bottom: 0.5rem;
+  color: rgba(77, 144, 120, 0.8);
+}
+
+.prod-description,
+.ingredients,
+.how-to-use {
+  font-family: 'Fairplay Display';
+  font-style: italic;
+  text-align: start;
+  width: 100%;
+  word-wrap: break-word;
+  line-height: 1.4;
+  font-size: 0.9em;
+}
+
+/* Ingredients list styles for future <ul><li> implementation */
+.ingredients-section ul {
+  font-family: 'Fairplay Display';
+  font-style: italic;
+  text-align: start;
+  width: 100%;
+  word-wrap: break-word;
+  line-height: 1.4;
+  font-size: 0.9em;
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 0;
+  padding-left: 1.5rem;
+  border: 1px solid rgba(77, 144, 120, 0.2);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.ingredients-section ul li {
+  margin-bottom: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border-bottom: 1px solid rgba(77, 144, 120, 0.1);
+}
+
+.ingredients-section ul li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+/* How-to-use list styles for future <ol><li> implementation */
+.how-to-use-section ol {
+  font-family: 'Fairplay Display';
+  font-style: italic;
+  text-align: start;
+  width: 100%;
+  word-wrap: break-word;
+  line-height: 1.4;
+  font-size: 0.9em;
+  max-height: 250px;
+  overflow-y: auto;
+  margin: 0;
+  padding-left: 1.8rem;
+  counter-reset: step-counter;
+  border: 1px solid rgba(77, 144, 120, 0.2);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.how-to-use-section ol li {
+  margin-bottom: 0.8rem;
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid rgba(77, 144, 120, 0.1);
+  position: relative;
+}
+
+.how-to-use-section ol li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.how-to-use-section ol li::marker {
+  font-weight: bold;
+  color: rgba(77, 144, 120, 0.8);
+}
+
+.reviews-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+}
+
+.reviews-header:hover {
+  color: rgba(77, 144, 120, 1);
+}
+
+.reviews-list {
+  max-height: 110px;
+  overflow-y: auto;
+  border: 1px solid rgba(77, 144, 120, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: -25px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.review-item {
+  border-bottom: 1px solid rgba(77, 144, 120, 0.2);
+  padding: 0.8rem 0;
+  margin-bottom: 0.5rem;
+}
+
+.review-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.review-date {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.review-stars {
+  font-size: 0.9em;
+}
+
+.review-text {
+  font-size: 0.85em;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.product-link a:hover {
+  background-color: rgba(77, 144, 120, 0.2);
+  border-color: rgba(77, 144, 120, 0.6);
+}
+
+.similar-products {
+  position: absolute;
+  right: 2.5%;
+  top: 1.5%;
+  width: 18%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  border: 10px solid rgba(77, 144, 120, 0.3);
+  border-radius: 25px;
+  background-color: rgba(77, 144, 120, 0.1);
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.similar-products-title {
+  font-family: 'Fairplay Display';
+  font-size: 1em;
+  margin: 0 0 1rem 0;
+  color: rgba(77, 144, 120, 0.8);
+  text-align: center;
+}
+
+.similar-products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.similar-product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.similar-product-item:hover {
+  transform: scale(1.05);
+}
+
+.similar-img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+  border: 5px solid rgba(77, 144, 120, 0.3);
+  border-radius: 15px;
+  background-color: rgba(255,255,255, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.similar-product-name {
+  font-family: 'Fairplay Display';
+  font-size: 0.8em;
+  color: rgba(77, 144, 120, 0.7);
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .prod {
+    width: 32%;
+  }
+  
+  .prod-details {
+    left: 35%;
+    width: 42%;
+  }
+  
+  .similar-products {
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px) {
+  .product {
+    flex-direction: column;
+    height: auto;
+    position: relative;
+  }
+  
+  .prod,
+  .prod-details,
+  .similar-products {
+    position: relative;
+    width: 95%;
+    left: 2.5%;
+    margin-bottom: 2%;
+  }
+  
+  .prod-details {
+    left: 2.5%;
+  }
+  
+  .similar-products {
+    height: auto;
+  }
+  
+  .similar-products-list {
+    flex-direction: row;
+    height: auto;
+  }
+  
+  .similar-img {
+    height: 100px;
+  }
+}
